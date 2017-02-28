@@ -12,6 +12,8 @@
 		4B6696EC1E6528F900683A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6696EA1E6528F900683A34 /* Main.storyboard */; };
 		4B6696EE1E6528F900683A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6696ED1E6528F900683A34 /* Assets.xcassets */; };
 		4B6696F11E6528F900683A34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6696EF1E6528F900683A34 /* LaunchScreen.storyboard */; };
+		4B6696F91E65294D00683A34 /* FoodDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6696F81E65294D00683A34 /* FoodDish.swift */; };
+		6B1FE507984C9FF9944F97E5 /* Pods_ApresCuisine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECB9FC36C290A6B81C7A9A8 /* Pods_ApresCuisine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		4B6696ED1E6528F900683A34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B6696F01E6528F900683A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B6696F21E6528F900683A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B6696F81E65294D00683A34 /* FoodDish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDish.swift; sourceTree = "<group>"; };
+		5F2DE0476FD0347BEA454A7F /* Pods-ApresCuisine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApresCuisine.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApresCuisine/Pods-ApresCuisine.release.xcconfig"; sourceTree = "<group>"; };
+		8ECB9FC36C290A6B81C7A9A8 /* Pods_ApresCuisine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApresCuisine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA40CAE00EA69542D37B77D /* Pods-ApresCuisine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApresCuisine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApresCuisine/Pods-ApresCuisine.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B1FE507984C9FF9944F97E5 /* Pods_ApresCuisine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A9ED8501CFAB9E8A9B5C5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCA40CAE00EA69542D37B77D /* Pods-ApresCuisine.debug.xcconfig */,
+				5F2DE0476FD0347BEA454A7F /* Pods-ApresCuisine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4B6696DA1E6528F900683A34 = {
 			isa = PBXGroup;
 			children = (
 				4B6696E51E6528F900683A34 /* ApresCuisine */,
 				4B6696E41E6528F900683A34 /* Products */,
+				08A9ED8501CFAB9E8A9B5C5F /* Pods */,
+				F3E6B16B9527E80F363DB0C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +74,21 @@
 			children = (
 				4B6696E61E6528F900683A34 /* AppDelegate.swift */,
 				4B6696E81E6528F900683A34 /* ViewController.swift */,
+				4B6696F81E65294D00683A34 /* FoodDish.swift */,
 				4B6696EA1E6528F900683A34 /* Main.storyboard */,
 				4B6696ED1E6528F900683A34 /* Assets.xcassets */,
 				4B6696EF1E6528F900683A34 /* LaunchScreen.storyboard */,
 				4B6696F21E6528F900683A34 /* Info.plist */,
 			);
 			path = ApresCuisine;
+			sourceTree = "<group>";
+		};
+		F3E6B16B9527E80F363DB0C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB9FC36C290A6B81C7A9A8 /* Pods_ApresCuisine.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B6696F51E6528F900683A34 /* Build configuration list for PBXNativeTarget "ApresCuisine" */;
 			buildPhases = (
+				FB0C1C00299E1406C483D1C4 /* [CP] Check Pods Manifest.lock */,
 				4B6696DF1E6528F900683A34 /* Sources */,
 				4B6696E01E6528F900683A34 /* Frameworks */,
 				4B6696E11E6528F900683A34 /* Resources */,
+				7B72C527CCE6F849A22CA68F /* [CP] Embed Pods Frameworks */,
+				27796B946FE0547B0A5F0A92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +161,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27796B946FE0547B0A5F0A92 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApresCuisine/Pods-ApresCuisine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B72C527CCE6F849A22CA68F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApresCuisine/Pods-ApresCuisine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB0C1C00299E1406C483D1C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B6696DF1E6528F900683A34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +216,7 @@
 			files = (
 				4B6696E91E6528F900683A34 /* ViewController.swift in Sources */,
 				4B6696E71E6528F900683A34 /* AppDelegate.swift in Sources */,
+				4B6696F91E65294D00683A34 /* FoodDish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +337,7 @@
 		};
 		4B6696F61E6528F900683A34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCA40CAE00EA69542D37B77D /* Pods-ApresCuisine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ApresCuisine/Info.plist;
@@ -270,6 +350,7 @@
 		};
 		4B6696F71E6528F900683A34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F2DE0476FD0347BEA454A7F /* Pods-ApresCuisine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ApresCuisine/Info.plist;
