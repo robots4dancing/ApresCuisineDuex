@@ -17,6 +17,22 @@ class ViewController: UIViewController {
     
     @IBOutlet var foodDishTableView :UITableView!
     
+    //MARK: - Interactivity Methods
+    
+    @IBAction func fetchFoodDishesPressed(button: UIBarButtonItem) {
+        fetchFoodDishes()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segEditDetailView" {
+            let indexPath = foodDishTableView.indexPathForSelectedRow!
+            let currentFoodDish = foodDishArray[indexPath.row]
+            let destVC = segue.destination as! DetailViewController
+            destVC.currentFoodDish = currentFoodDish
+            foodDishTableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
     //MARK: - Parse Methods
     
     func save(foodDish: FoodDish) {
@@ -30,8 +46,7 @@ class ViewController: UIViewController {
     func fetchFoodDishes() {
         let query = PFQuery(className: "FoodDish")
         query.limit = 1000
-        query.order(byAscending: "isComplete")
-        query.order(byDescending: "priorityLevel")
+        query.order(byDescending: "dateEaten")
         query.findObjectsInBackground { (results, error) in
             if let err = error {
                 print("Got error \(err.localizedDescription)")
@@ -48,12 +63,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     //    testParse()
-        fetchFoodDishes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchFoodDishes()
+        foodDishTableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +86,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodDishArray.count
     }
@@ -89,10 +104,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedFoodDish = foodDishArray[indexPath.row]
-    }
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("About to Delete")
@@ -107,5 +118,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
+    
 }
 
