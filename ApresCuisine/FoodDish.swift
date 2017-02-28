@@ -12,7 +12,7 @@ import Parse
 class FoodDish: PFObject, PFSubclassing {
     
     @NSManaged var dishName     :String
-    @NSManaged var dateEaten    :Date?
+    @NSManaged var dateEaten    :Date
     @NSManaged var rating       :Int
     @NSManaged var reviewText   :String
     

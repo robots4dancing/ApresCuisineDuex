@@ -13,6 +13,7 @@
 		4B6696EE1E6528F900683A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6696ED1E6528F900683A34 /* Assets.xcassets */; };
 		4B6696F11E6528F900683A34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6696EF1E6528F900683A34 /* LaunchScreen.storyboard */; };
 		4B6696F91E65294D00683A34 /* FoodDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6696F81E65294D00683A34 /* FoodDish.swift */; };
+		4B948D971E65408E000AAA87 /* FoodDishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B948D961E65408E000AAA87 /* FoodDishTableViewCell.swift */; };
 		6B1FE507984C9FF9944F97E5 /* Pods_ApresCuisine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ECB9FC36C290A6B81C7A9A8 /* Pods_ApresCuisine.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		4B6696F01E6528F900683A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B6696F21E6528F900683A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B6696F81E65294D00683A34 /* FoodDish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDish.swift; sourceTree = "<group>"; };
+		4B948D961E65408E000AAA87 /* FoodDishTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDishTableViewCell.swift; sourceTree = "<group>"; };
 		5F2DE0476FD0347BEA454A7F /* Pods-ApresCuisine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApresCuisine.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApresCuisine/Pods-ApresCuisine.release.xcconfig"; sourceTree = "<group>"; };
 		8ECB9FC36C290A6B81C7A9A8 /* Pods_ApresCuisine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApresCuisine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA40CAE00EA69542D37B77D /* Pods-ApresCuisine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApresCuisine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApresCuisine/Pods-ApresCuisine.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				4B6696E61E6528F900683A34 /* AppDelegate.swift */,
 				4B6696E81E6528F900683A34 /* ViewController.swift */,
 				4B6696F81E65294D00683A34 /* FoodDish.swift */,
+				4B948D961E65408E000AAA87 /* FoodDishTableViewCell.swift */,
 				4B6696EA1E6528F900683A34 /* Main.storyboard */,
 				4B6696ED1E6528F900683A34 /* Assets.xcassets */,
 				4B6696EF1E6528F900683A34 /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B6696E91E6528F900683A34 /* ViewController.swift in Sources */,
+				4B948D971E65408E000AAA87 /* FoodDishTableViewCell.swift in Sources */,
 				4B6696E71E6528F900683A34 /* AppDelegate.swift in Sources */,
 				4B6696F91E65294D00683A34 /* FoodDish.swift in Sources */,
 			);
@@ -380,6 +384,7 @@
 				4B6696F71E6528F900683A34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
