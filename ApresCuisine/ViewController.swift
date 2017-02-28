@@ -19,6 +19,14 @@ class ViewController: UIViewController {
     
     //MARK: - Parse Methods
     
+    func save(foodDish: FoodDish) {
+        
+        foodDish.saveInBackground { (success, error) in
+            print("Object Saved")
+            self.fetchFoodDishes()
+        }
+    }
+    
     func fetchFoodDishes() {
         let query = PFQuery(className: "FoodDish")
         query.limit = 1000
@@ -39,6 +47,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    //    testParse()
         fetchFoodDishes()
     }
     
@@ -49,6 +58,15 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: - Test Methods
+    
+    func testParse() {
+        
+        let testObject = FoodDish(dishName: "Lentil Soup", dateEaten: Date(), rating: 10, reviewText: "Soup made from lentils. Delicious and nutritious!")
+        save(foodDish: testObject)
+        
     }
 
 }
@@ -64,10 +82,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         self.dateFormat.dateFormat = "MM/dd/yyyy"
         let date = currentFoodDish.dateEaten
         let dateString = self.dateFormat.string(from: date)
-        cell.dishNameLabel!.text = selectedFoodDish!.dishName
-        cell.dateEatenLabel!.text = dateString
-        cell.ratingLabel!.text = "\(selectedFoodDish!.rating)"
-        cell.reviewLabel!.text = selectedFoodDish!.reviewText
+        cell.dishNameLabel.text = currentFoodDish.dishName
+        cell.dateEatenLabel.text = dateString
+        cell.ratingLabel.text = "\(currentFoodDish.rating)"
+        cell.reviewTextLabel.text = currentFoodDish.reviewText
         return cell
     }
     

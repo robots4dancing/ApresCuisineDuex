@@ -13,6 +13,6 @@ class FoodDishTableViewCell: UITableViewCell {
     @IBOutlet var dishNameLabel     :UILabel!
     @IBOutlet var dateEatenLabel    :UILabel!
     @IBOutlet var ratingLabel       :UILabel!
-    @IBOutlet var reviewLabel       :UILabel!
+    @IBOutlet var reviewTextLabel   :UILabel!
     
 }
