@@ -42,6 +42,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     //MARK: - Interactivity Methods
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueMapView" {
+            let destVC = segue.destination as! MapViewController
+            destVC.currentFoodDish = currentFoodDish
+        }
+    }
+    
     @IBAction func builtInCameraPressed(button: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()

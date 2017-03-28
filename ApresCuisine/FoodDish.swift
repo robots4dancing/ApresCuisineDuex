@@ -15,6 +15,9 @@ class FoodDish: PFObject, PFSubclassing {
     @NSManaged var dateEaten    :Date
     @NSManaged var rating       :Int
     @NSManaged var reviewText   :String
+    @NSManaged var imageName    :String
+    @NSManaged var latitude     :Double
+    @NSManaged var longitude    :Double
     
     convenience init(dishName: String, dateEaten: Date, rating: Int, reviewText: String) {
         self.init()

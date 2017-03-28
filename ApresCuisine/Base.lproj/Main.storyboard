@@ -141,6 +141,11 @@
                                                     <action selector="saveButtonPressedWithButton:" destination="V2j-TP-haB" id="XEF-fG-Icn"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem title="Map" id="uGH-P3-if6">
+                                                <connections>
+                                                    <segue destination="q7I-rc-RS0" kind="show" identifier="segueMapView" id="8Co-vA-McO"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem systemItem="camera" id="vwX-ID-5LW">
                                                 <connections>
                                                     <action selector="builtInCameraPressedWithButton:" destination="V2j-TP-haB" id="huk-EJ-4Xb"/>
@@ -151,8 +156,8 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n51-th-ce4">
-                                <rect key="frame" x="16" y="305" width="343" height="342"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="472" width="343" height="175"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -162,7 +167,7 @@
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Food Dish Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83K-p7-1sM">
                                 <rect key="frame" x="16" y="108" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -172,7 +177,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating (0 to 10)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOs-eI-Noo">
                                 <rect key="frame" x="16" y="146" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -184,6 +189,10 @@
                                     <!--2017-02-28 18:37:01 +0000-->
                                 </date>
                             </datePicker>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rsH-yN-rlP">
+                                <rect key="frame" x="16" y="305" width="343" height="159"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -197,6 +206,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oR-ya-SFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1572" y="-562.66866566716647"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="njY-ZG-Cuv">
+            <objects>
+                <viewController id="q7I-rc-RS0" customClass="MapViewController" customModule="ApresCuisine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oxe-VS-xme"/>
+                        <viewControllerLayoutGuide type="bottom" id="QgK-4J-n2W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UVW-Yf-yqz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TDj-ZN-6ps">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="foodMapView" destination="TDj-ZN-6ps" id="5eI-Vk-OoF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKl-qH-6Uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2336.8000000000002" y="-561.76911544227892"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RyZ-t5-m62">

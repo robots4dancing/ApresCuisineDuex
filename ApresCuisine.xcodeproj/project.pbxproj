@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B330ADC1E8AD4A6001E035C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B330ADB1E8AD4A6001E035C /* MapViewController.swift */; };
 		4B6696E71E6528F900683A34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6696E61E6528F900683A34 /* AppDelegate.swift */; };
 		4B6696E91E6528F900683A34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6696E81E6528F900683A34 /* ViewController.swift */; };
 		4B6696EC1E6528F900683A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6696EA1E6528F900683A34 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B330ADB1E8AD4A6001E035C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4B6696E31E6528F900683A34 /* ApresCuisine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApresCuisine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6696E61E6528F900683A34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B6696E81E6528F900683A34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				4B6696F81E65294D00683A34 /* FoodDish.swift */,
 				4B948D961E65408E000AAA87 /* FoodDishTableViewCell.swift */,
 				4B6696EA1E6528F900683A34 /* Main.storyboard */,
+				4B330ADB1E8AD4A6001E035C /* MapViewController.swift */,
 				4B6696ED1E6528F900683A34 /* Assets.xcassets */,
 				4B6696EF1E6528F900683A34 /* LaunchScreen.storyboard */,
 				4B6696F21E6528F900683A34 /* Info.plist */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B6696E91E6528F900683A34 /* ViewController.swift in Sources */,
+				4B330ADC1E8AD4A6001E035C /* MapViewController.swift in Sources */,
 				4B948D971E65408E000AAA87 /* FoodDishTableViewCell.swift in Sources */,
 				4B948D991E65EAD6000AAA87 /* DetailViewController.swift in Sources */,
 				4B6696E71E6528F900683A34 /* AppDelegate.swift in Sources */,
