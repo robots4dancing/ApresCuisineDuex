@@ -14,10 +14,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     var currentFoodDish     :FoodDish?
     
-    @IBOutlet var foodDishTextField     :UITextField!
-    @IBOutlet var ratingTextField       :UITextField!
-    @IBOutlet var dateEatenDatePicker   :UIDatePicker!
-    @IBOutlet var reviewTextTextView    :UITextView!
+    @IBOutlet var foodDishTextField             :UITextField!
+    @IBOutlet var ratingTextField               :UITextField!
+    @IBOutlet var dateEatenDatePicker           :UIDatePicker!
+    @IBOutlet var reviewTextTextView            :UITextView!
+    @IBOutlet private weak var capturedImage    :UIImageView!
     
     //MARK: - Display Methods
     
@@ -49,6 +50,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         }
     }
     
+    @IBAction func saveButtonPressed(button: UIBarButtonItem){
+        save(foodDish: currentFoodDish!)
+    }
+    
+    @IBAction func shareOnWhateverButtonPressed(button: UIBarButtonItem) {
+        let shareString = "Food Dish: \(currentFoodDish!.dishName)\nDate Eaten: \(currentFoodDish!.dateEaten)\nRating (0 to 10): \(currentFoodDish!.rating)\nReview: \(currentFoodDish!.reviewText)"
+        let activityVC = UIActivityViewController(activityItems: [shareString], applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
+    }
+    
+    //MARK: - Camera Methods
+    
     @IBAction func builtInCameraPressed(button: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
@@ -60,14 +73,53 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         }
     }
     
-    @IBAction func saveButtonPressed(button: UIBarButtonItem){
-        save(foodDish: currentFoodDish!)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        capturedImage.image = (info[UIImagePickerControllerOriginalImage] as! UIImage)
+        saveImg(image: capturedImage.image!)
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func shareOnWhateverButtonPressed(button: UIBarButtonItem) {
-        let shareString = "Food Dish: \(currentFoodDish!.dishName)\nDate Eaten: \(currentFoodDish!.dateEaten)\nRating (0 to 10): \(currentFoodDish!.rating)\nReview: \(currentFoodDish!.reviewText)"
-        let activityVC = UIActivityViewController(activityItems: [shareString], applicationActivities: nil)
-        present(activityVC, animated: true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: - Image Saving Methods
+    
+    func getNewImageFilename() -> String {
+        return ProcessInfo.processInfo.globallyUniqueString + ".png"
+    }
+    
+    func getDocumentPathForFile(filename: String) -> URL {
+        let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let docURL = URL(fileURLWithPath: docPath)
+        return docURL.appendingPathComponent(filename)
+    }
+    
+    func delete(localFileURL: URL) {
+        let fileMgr = FileManager()
+        try? fileMgr.removeItem(at: localFileURL)
+    }
+    
+    func saveImg(image: UIImage) {
+        saveImgFile(image: image, filename: getNewImageFilename())
+    }
+    
+    func saveImgFile(image: UIImage, filename: String) {
+        do {
+            let localPath = getDocumentPathForFile(filename: filename)
+            guard let png = UIImagePNGRepresentation(image) else {
+                print("Error: Failed to create PNG")
+                return
+            }
+            try png.write(to: localPath)
+            print("Saved: \(filename)")
+            currentFoodDish?.imageName = filename
+            save(foodDish: currentFoodDish!)
+            
+        } catch let error {
+            print("Error: Saving local failed \(error.localizedDescription)")
+        }
+        
     }
     
     //MARK: - Text Delegate Methods
@@ -93,6 +145,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             display(foodDish: foodDish)
         } else {
             currentFoodDish = FoodDish()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print("\(currentFoodDish?.imageName)")
+        if currentFoodDish?.imageName != nil {
+            print("GOT HERE!!!")
+            let imgUrl = getDocumentPathForFile(filename: (currentFoodDish?.imageName)!)
+            print("\(imgUrl)")
+            capturedImage.image = UIImage(contentsOfFile: imgUrl.path)
         }
     }
 
