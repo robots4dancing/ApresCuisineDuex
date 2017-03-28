@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Social
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var currentFoodDish     :FoodDish?
     
@@ -41,6 +41,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     
     //MARK: - Interactivity Methods
+    
+    @IBAction func builtInCameraPressed(button: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            print("No Camera")
+        }
+    }
     
     @IBAction func saveButtonPressed(button: UIBarButtonItem){
         save(foodDish: currentFoodDish!)

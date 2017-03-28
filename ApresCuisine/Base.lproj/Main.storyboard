@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6o-1u-nXO" id="xHV-VX-8Bg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dishNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXI-Ck-Mrm">
@@ -141,6 +141,11 @@
                                                     <action selector="saveButtonPressedWithButton:" destination="V2j-TP-haB" id="XEF-fG-Icn"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem systemItem="camera" id="vwX-ID-5LW">
+                                                <connections>
+                                                    <action selector="builtInCameraPressedWithButton:" destination="V2j-TP-haB" id="huk-EJ-4Xb"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -213,6 +218,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cem-QT-nD1"/>
+        <segue reference="imj-n0-v7K"/>
     </inferredMetricsTieBreakers>
 </document>

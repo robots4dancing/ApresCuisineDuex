@@ -132,6 +132,7 @@
 				TargetAttributes = {
 					4B6696E21E6528F900683A34 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9N6M5Y8VH3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -348,6 +349,7 @@
 			baseConfigurationReference = BCA40CAE00EA69542D37B77D /* Pods-ApresCuisine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9N6M5Y8VH3;
 				INFOPLIST_FILE = ApresCuisine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wccnet.edu.sempie.ApresCuisine;
@@ -361,6 +363,7 @@
 			baseConfigurationReference = 5F2DE0476FD0347BEA454A7F /* Pods-ApresCuisine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9N6M5Y8VH3;
 				INFOPLIST_FILE = ApresCuisine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wccnet.edu.sempie.ApresCuisine;
